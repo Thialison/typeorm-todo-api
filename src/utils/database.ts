@@ -8,12 +8,6 @@ export class Database {
     } catch (error) {
       console.log(`Database is not running ${error}`)
     }
-
-    process.on("SIGINT", () => {
-      this.close().then(() => {
-        console.log("DB Desconectado")
-      })
-    })
   }
 
   async close() {

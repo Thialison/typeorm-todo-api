@@ -9,7 +9,11 @@ const server = app.listen(port, async () => {
   await new Database().connection()
 })
 
-process.on("SIGINT", () => {
+process.on("SIGINT", async () => {
   server.close()
   console.log("App Desconectado")
+
+  await new Database().close().then(() => {
+    console.log("DB Desconectado")
+  })
 })

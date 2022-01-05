@@ -1,6 +1,7 @@
 {
   "name": "typeorm-todo-api",
   "version": "0.0.1",
+  "license": "MIT",
   "module": "true",
   "description": "Awesome project developed with TypeORM.",
   "scripts": {

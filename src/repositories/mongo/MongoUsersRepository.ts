@@ -5,13 +5,11 @@ import { ICreateUserRequest } from "../../useCases/UsersDTO"
 
 export class MongoUsersRepository implements IUsersRepository {
   async findAll(): Promise<User[]> {
-    const repository = getRepository(User)
-    return await repository.find()
+    return await getRepository(User).find()
   }
 
   async exists(username: string): Promise<boolean> {
-    const repository = getRepository(User)
-    const user = await repository.findOne({ username })
+    const user = await getRepository(User).findOne({ username })
 
     return !!user
   }
