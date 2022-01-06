@@ -6,4 +6,5 @@ export interface IUsersRepository {
   findAll(): Promise<User[]>
   create(user: ICreateUserRequest): Promise<void>
   delete(username: string): Promise<void>
+  findUser(username: string): Promise<User>
 }

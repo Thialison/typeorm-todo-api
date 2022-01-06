@@ -3,10 +3,11 @@ import { check, validationResult } from "express-validator"
 import { showUsersController } from "../useCases/ShowUsers/ShowUsersFactory"
 import { createUserController } from "../useCases/CreateUser/CreateUserFactory"
 import { deleteUserController } from "../useCases/DeleteUser/DeleteUserFactory"
+import { checkJwt } from "../utils/auth"
 
 const userRouter = Router()
 
-userRouter.get("/", (request: Request, response: Response) => {
+userRouter.get("/", [checkJwt], (request: Request, response: Response) => {
   showUsersController.handle(request, response)
 })
 
@@ -25,8 +26,12 @@ userRouter.post(
   }
 )
 
-userRouter.delete("/:username", (request: Request, response: Response) => {
-  deleteUserController.handle(request, response)
-})
+userRouter.delete(
+  "/:username",
+  [checkJwt],
+  (request: Request, response: Response) => {
+    deleteUserController.handle(request, response)
+  }
+)
 
 export default userRouter

@@ -1,4 +1,5 @@
 import { IUsersRepository } from "../../repositories/IUsersRepository"
+import { createToken } from "../../utils/auth"
 import { makeEncrypt } from "../../utils/encrypt"
 import { ICreateUserRequest } from "../UsersDTO"
 
@@ -12,15 +13,15 @@ export class CreateUserService {
   async execute({
     username,
     password,
-  }: ICreateUserRequest): Promise<void | Error> {
+  }: ICreateUserRequest): Promise<string | Error> {
     if (await this.userRepository.exists(username)) {
       return new Error("Username already exists")
     }
 
     password = await makeEncrypt(password)
 
-    const user = await this.userRepository.create({ username, password })
+    await this.userRepository.create({ username, password })
 
-    return user
+    return createToken(username)
   }
 }

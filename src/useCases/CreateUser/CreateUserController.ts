@@ -25,6 +25,6 @@ export class CreateUserController {
       return response.status(404).json(result.message)
     }
 
-    return response.status(201).json({ sucess: "User Created" })
+    return response.status(201).json({ sucess: result })
   }
 }

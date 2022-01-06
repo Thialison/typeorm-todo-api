@@ -8,6 +8,10 @@ export class MongoUsersRepository implements IUsersRepository {
     return await getRepository(User).find()
   }
 
+  async findUser(username: string): Promise<User> {
+    return await getRepository(User).findOne({ username })
+  }
+
   async exists(username: string): Promise<boolean> {
     const user = await getRepository(User).findOne({ username })
 
