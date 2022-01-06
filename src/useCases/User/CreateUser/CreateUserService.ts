@@ -1,6 +1,6 @@
-import { IUsersRepository } from "../../repositories/IUsersRepository"
-import { createToken } from "../../utils/auth"
-import { makeEncrypt } from "../../utils/encrypt"
+import { IUsersRepository } from "../../../repositories/IUsersRepository"
+import { createToken } from "../../../utils/auth"
+import { makeEncrypt } from "../../../utils/encrypt"
 import { ICreateUserRequest } from "../UsersDTO"
 
 export class CreateUserService {

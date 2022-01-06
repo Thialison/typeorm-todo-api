@@ -1,5 +1,5 @@
-import { User } from "../../entities/User"
-import { IUsersRepository } from "../../repositories/IUsersRepository"
+import { User } from "../../../entities/User"
+import { IUsersRepository } from "../../../repositories/IUsersRepository"
 
 export class ShowUsersService {
   private usersRepository: IUsersRepository

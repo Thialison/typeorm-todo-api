@@ -1,5 +1,5 @@
 import { User } from "../entities/User"
-import { ICreateUserRequest } from "../useCases/UsersDTO"
+import { ICreateUserRequest } from "../useCases/User/UsersDTO"
 
 export interface IUsersRepository {
   exists(username: string): Promise<boolean>

@@ -1,7 +1,7 @@
-import { IUsersRepository } from "../../repositories/IUsersRepository"
-import { compareEncrypt } from "../../utils/encrypt"
+import { IUsersRepository } from "../../../repositories/IUsersRepository"
+import { compareEncrypt } from "../../../utils/encrypt"
 import { ICreateUserRequest } from "../UsersDTO"
-import { createToken } from "../../utils/auth"
+import { createToken } from "../../../utils/auth"
 
 export class LoginService {
   private userRepository: IUsersRepository

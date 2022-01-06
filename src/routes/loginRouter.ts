@@ -1,5 +1,5 @@
 import { Request, Response, Router } from "express"
-import { loginController } from "../useCases/Login/LoginFactory"
+import { loginController } from "../useCases/User/Login/LoginFactory"
 
 const LoginRouter = Router()
 

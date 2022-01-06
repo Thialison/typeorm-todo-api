@@ -1,7 +1,7 @@
 import { getRepository } from "typeorm"
 import { User } from "../../entities/User"
 import { IUsersRepository } from "../IUsersRepository"
-import { ICreateUserRequest } from "../../useCases/UsersDTO"
+import { ICreateUserRequest } from "../../useCases/User/UsersDTO"
 
 export class MongoUsersRepository implements IUsersRepository {
   async findAll(): Promise<User[]> {

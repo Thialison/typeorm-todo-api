@@ -1,8 +1,8 @@
 import { Request, Response, Router } from "express"
 import { check, validationResult } from "express-validator"
-import { showUsersController } from "../useCases/ShowUsers/ShowUsersFactory"
-import { createUserController } from "../useCases/CreateUser/CreateUserFactory"
-import { deleteUserController } from "../useCases/DeleteUser/DeleteUserFactory"
+import { showUsersController } from "../useCases/User/ShowUsers/ShowUsersFactory"
+import { createUserController } from "../useCases/User/CreateUser/CreateUserFactory"
+import { deleteUserController } from "../useCases/User/DeleteUser/DeleteUserFactory"
 import { checkJwt } from "../utils/auth"
 
 const userRouter = Router()
