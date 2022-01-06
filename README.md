@@ -1,7 +1,35 @@
-# Awesome Project Build with TypeORM
+### Todo API (TypeORM)
 
-Steps to run this project:
+RESTFul API para você criar os seus TODOS. Usando os principios do SOLID
 
-1. Run `yarn` command
-2. Run `docker-compose up -d` command
-3. Run `yarn start` command
+#### Tecnologias
+
+- Node
+- TypeORM
+- Express
+- MongoDB
+
+#### Dependências
+
+- Nodejs
+- Docker Compose
+
+#### Executando a API
+
+Suba o container do mongoDB
+
+```
+docker-compose up -d
+```
+
+Instale as dependências
+
+```
+yarn
+```
+
+Inicie a aplicação
+
+```
+yarn dev
+```
