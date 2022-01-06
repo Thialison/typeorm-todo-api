@@ -2,7 +2,7 @@ import { Request, Response, Router } from "express"
 import { check, validationResult } from "express-validator"
 import { showUsersController } from "../useCases/ShowUsers/ShowUsersFactory"
 import { createUserController } from "../useCases/CreateUser/CreateUserFactory"
-// import { check, validationResult } from "express-validator"
+import { deleteUserController } from "../useCases/DeleteUser/DeleteUserFactory"
 
 const userRouter = Router()
 
@@ -24,5 +24,9 @@ userRouter.post(
     createUserController.handle(resquest, response)
   }
 )
+
+userRouter.delete("/:username", (request: Request, response: Response) => {
+  deleteUserController.handle(request, response)
+})
 
 export default userRouter

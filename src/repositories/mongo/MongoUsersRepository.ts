@@ -22,4 +22,10 @@ export class MongoUsersRepository implements IUsersRepository {
 
     await repository.save(newUser)
   }
+
+  async delete(username: string): Promise<void> {
+    const user = await getRepository(User).findOne({ username })
+
+    await getRepository(User).delete(user)
+  }
 }
