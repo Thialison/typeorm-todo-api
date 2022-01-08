@@ -6,6 +6,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToMany,
+  JoinTable,
 } from "typeorm"
 import { Todo } from "./Todo"
 
@@ -21,6 +22,7 @@ export class User {
   password: string
 
   @OneToMany(() => Todo, (todo) => todo.user)
+  @JoinTable()
   todos: Todo[]
 
   @CreateDateColumn({

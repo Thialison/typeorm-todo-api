@@ -1,12 +1,13 @@
 import { Request, Response, Router } from "express"
 import { check, validationResult } from "express-validator"
 import { createTodoController } from "../useCases/Todo/CreateTodo/CreateTodoFactory"
+import { showAllTodosController } from "../useCases/Todo/ShowAllTodos/ShowAllTodosFactory"
 import { checkJwt } from "../utils/auth"
 
 const todoRouter = Router()
 
 todoRouter.get("/", [checkJwt], (request: Request, response: Response) => {
-  response.status(200).send({ message: "All todos" })
+  showAllTodosController.handle(request, response)
 })
 
 todoRouter.post(
@@ -21,13 +22,5 @@ todoRouter.post(
     createTodoController.handle(request, response)
   }
 )
-
-// userRouter.delete(
-//   "/:username",
-//   [checkJwt],
-//   (request: Request, response: Response) => {
-//     deleteUserController.handle(request, response)
-//   }
-// )
 
 export default todoRouter

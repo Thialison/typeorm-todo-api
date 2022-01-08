@@ -6,6 +6,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   ManyToOne,
+  JoinTable,
 } from "typeorm"
 import { User } from "./User"
 
@@ -23,6 +24,7 @@ export class Todo {
   description: string
 
   @ManyToOne(() => User, (user) => user.todos)
+  @JoinTable()
   user: User
 
   @CreateDateColumn({

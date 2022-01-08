@@ -4,8 +4,13 @@ import { ITodosRepository } from "../ITodosRepository"
 import { ICreateTodoRequest } from "../../useCases/Todo/TodosDTO"
 
 export class MongoTodosRepository implements ITodosRepository {
-  async findAll(): Promise<Todo[]> {
-    return await getRepository(Todo).find({ relations: ["user"] })
+  async findAllFromUser(username: string): Promise<Todo[]> {
+    return await getRepository(Todo).find({
+      relations: ["user"],
+      where: {
+        "user.username": { $eq: username },
+      },
+    })
   }
 
   async create(todo: ICreateTodoRequest): Promise<Todo> {
