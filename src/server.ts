@@ -14,9 +14,7 @@ const createServer = () => {
 
   app.use(helmet())
   app.use(cookieParser())
-  // Get cookies
-  // const ck = req.cookies
-  // console.log(ck)
+
   app.use(router)
   app.use(cors())
   app.use(express.json())

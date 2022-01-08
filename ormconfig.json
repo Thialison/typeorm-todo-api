@@ -1,6 +1,6 @@
 {
   "type": "mongodb",
-  "database": "test",
+  "database": "todo_api",
   "useUnifiedTopology": true,
   "synchronize": true,
   "logging": false,

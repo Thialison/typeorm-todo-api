@@ -5,23 +5,25 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
-  OneToMany,
+  ManyToOne,
 } from "typeorm"
-import { Todo } from "./Todo"
+import { User } from "./User"
 
 @Entity()
-export class User {
+export class Todo {
   @ObjectIdColumn()
   id: ObjectID
 
-  @Column({ unique: true })
-  username: string
-
   @Column()
-  password: string
+  title: string
 
-  @OneToMany(() => Todo, (todo) => todo.user)
-  todos: Todo[]
+  @Column({
+    default: () => "",
+  })
+  description: string
+
+  @ManyToOne(() => User, (user) => user.todos)
+  user: User
 
   @CreateDateColumn({
     type: "timestamp",

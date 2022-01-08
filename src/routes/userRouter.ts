@@ -17,12 +17,12 @@ userRouter.post(
     check("username").isString().isLength({ min: 6 }).trim(),
     check("password").isLength({ min: 8 }).trim().escape(),
   ],
-  (resquest: Request, response: Response) => {
-    const errors = validationResult(resquest)
+  (request: Request, response: Response) => {
+    const errors = validationResult(request)
     if (!errors.isEmpty()) {
       return response.status(422).json({ errors: errors.array() })
     }
-    createUserController.handle(resquest, response)
+    createUserController.handle(request, response)
   }
 )
 
