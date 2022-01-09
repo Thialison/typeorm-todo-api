@@ -1,6 +1,8 @@
-import { createConnection, getConnection } from "typeorm"
+import { createConnection, getConnection, getConnectionOptions } from "typeorm"
 
 export class Database {
+  private mongoTestDBOptions: any
+
   async connection() {
     try {
       const conn = await createConnection()
@@ -16,5 +18,12 @@ export class Database {
 
   async conn() {
     await getConnection().connect()
+  }
+
+  async createTestDBConnection() {
+    const options = await getConnectionOptions("test")
+    this.mongoTestDBOptions = options
+    this.mongoTestDBOptions.name = "default"
+    await createConnection(this.mongoTestDBOptions)
   }
 }
