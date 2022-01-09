@@ -1,13 +1,30 @@
-{
-  "type": "mongodb",
-  "database": "todo_api",
-  "useUnifiedTopology": true,
-  "synchronize": true,
-  "logging": false,
-  "entities": ["src/entities/*.ts"],
-  "migrations": ["src/migrations/*.ts"],
-  "cli": {
-    "entitiesDir": "src/entities",
-    "migrationsDir": "src/migrations"
+[
+  {
+    "type": "mongodb",
+    "database": "todo_api",
+    "useUnifiedTopology": true,
+    "synchronize": true,
+    "logging": false,
+    "entities": ["src/entities/*.ts"],
+    "migrations": ["src/migrations/*.ts"],
+    "cli": {
+      "entitiesDir": "src/entities",
+      "migrationsDir": "src/migrations"
+    }
+  },
+  {
+    "name": "test",
+    "type": "mongodb",
+    "database": "todo_api_test",
+    "useUnifiedTopology": true,
+    "synchronize": true,
+    "logging": false,
+    "dropSchema": true,
+    "entities": ["src/entities/*.ts"],
+    "migrations": ["src/migrations/*.ts"],
+    "cli": {
+      "entitiesDir": "src/entities",
+      "migrationsDir": "src/migrations"
+    }
   }
-}
+]
