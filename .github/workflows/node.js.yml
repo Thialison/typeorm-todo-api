@@ -1,4 +1,4 @@
-name: CI - Todo Typescript API
+name: CI - Todo API
 
 on:
   push:
