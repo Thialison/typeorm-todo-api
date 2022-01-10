@@ -1,6 +1,6 @@
 import { CreateUserController } from "./CreateUserController"
 import { CreateUserService } from "./CreateUserService"
-import { MongoUsersRepository } from "../../../repositories/mongo/mongoUsersRepository"
+import { MongoUsersRepository } from "../../../repositories/mongo/MongoUsersRepository"
 
 const mongoUsersRepository = new MongoUsersRepository()
 

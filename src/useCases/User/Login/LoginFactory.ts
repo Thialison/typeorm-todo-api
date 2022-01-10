@@ -1,6 +1,6 @@
 import { LoginController } from "./LoginController"
 import { LoginService } from "./LoginService"
-import { MongoUsersRepository } from "../../../repositories/mongo/mongoUsersRepository"
+import { MongoUsersRepository } from "../../../repositories/mongo/MongoUsersRepository"
 
 const mongoUsersRepository = new MongoUsersRepository()
 

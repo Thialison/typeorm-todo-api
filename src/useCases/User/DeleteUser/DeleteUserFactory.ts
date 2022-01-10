@@ -1,6 +1,6 @@
 import { DeleteUserController } from "./DeleteUserController"
 import { DeleteUserService } from "./DeleteUserService"
-import { MongoUsersRepository } from "../../../repositories/mongo/mongoUsersRepository"
+import { MongoUsersRepository } from "../../../repositories/mongo/MongoUsersRepository"
 
 const mongoUsersRepository = new MongoUsersRepository()
 

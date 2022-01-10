@@ -1,7 +1,7 @@
 import { CreateTodoController } from "./CreateTodoController"
 import { CreateTodoService } from "./CreateTodoService"
-import { MongoTodosRepository } from "../../../repositories/mongo/mongoTodosRepository"
-import { MongoUsersRepository } from "../../../repositories/mongo/mongoUsersRepository"
+import { MongoTodosRepository } from "../../../repositories/mongo/MongoTodosRepository"
+import { MongoUsersRepository } from "../../../repositories/mongo/MongoUsersRepository"
 
 const mongoTodoRepository = new MongoTodosRepository()
 const mongoUserRepository = new MongoUsersRepository()
