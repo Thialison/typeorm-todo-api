@@ -19,7 +19,7 @@ describe("Create User", () => {
       password: "teste#282h",
     })
 
-    expect(response.body).toHaveProperty("sucess")
+    expect(response.body).toHaveProperty("token")
     expect(response.status).toBe(201)
   })
 

@@ -29,7 +29,7 @@ export class CreateTodoController {
     return response.status(201).json({ data: this.parseTodoResponse(result) })
   }
 
-  private parseTodoResponse = ({ id, title, description, user }: Todo) => {
-    return { id, title, description, user: { username: user.username } }
+  private parseTodoResponse = ({ id, title, description }: Todo) => {
+    return { id, title, description }
   }
 }

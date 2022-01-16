@@ -1,19 +1,27 @@
 import {
   Entity,
-  ObjectIdColumn,
-  ObjectID,
   Column,
   CreateDateColumn,
   UpdateDateColumn,
   ManyToOne,
   JoinTable,
+  PrimaryGeneratedColumn,
+  ObjectIdColumn,
 } from "typeorm"
 import { User } from "./User"
+import { v4 as uuid } from "uuid"
 
 @Entity()
 export class Todo {
-  @ObjectIdColumn()
-  id: ObjectID
+  constructor(id?: string) {
+    this.id = uuid()
+  }
+
+  @ObjectIdColumn({ name: "_id" })
+  _id: string
+
+  @PrimaryGeneratedColumn()
+  id: string
 
   @Column()
   title: string
