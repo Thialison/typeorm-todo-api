@@ -1,6 +1,14 @@
-### Todo API (TypeORM)
+## Todo API (TypeORM)
 
-RESTFul API para você criar os seus TODOS. Usando os principios do SOLID
+<p id="sobre" align="center">
+
+  ![](https://img.shields.io/badge/license-MIT-green)
+  ![](https://img.shields.io/badge/language-Typescript-blue)
+  ![](https://img.shields.io/badge/language-Nodejs-orange)
+  ![](https://img.shields.io/badge/database-MongoDB-purple)
+  
+
+RESTFul API para você criar os seus TODOS. Usando os principios do **SOLID**
 
 #### Tecnologias
 
