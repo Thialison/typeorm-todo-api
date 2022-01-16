@@ -1,7 +1,6 @@
 import {
   Entity,
   ObjectIdColumn,
-  ObjectID,
   Column,
   CreateDateColumn,
   UpdateDateColumn,
@@ -12,8 +11,8 @@ import { Todo } from "./Todo"
 
 @Entity()
 export class User {
-  @ObjectIdColumn()
-  id: ObjectID
+  @ObjectIdColumn({ name: "id" })
+  id: string
 
   @Column({ unique: true })
   username: string
